@@ -1,28 +1,8 @@
 var React = require('react');
 var Data = require('./Data');
-var rgbToHex = require('./RGBToHex');
-var returnNum = require('./ReturnNum');
-var ColorItem = React.createClass({
-  colorItemClick: function() {
-    this.props.colorItemClickHandle(this.props.colorname, this.props.textColor);
-  },
-  render: function() {
-    var getColorName = this.props.colorname;
-    var styles = {
-      backgroundColor: getColorName,
-      padding: '20px 5px',
-      color: this.props.textColor,
-      margin: '5px',
-      textAlign: 'center',
-      cursor: 'pointer'
-    };
-    return (
-      <div onClick={this.colorItemClick} style={styles} className='colorItem'>
-        <h3>{getColorName} <small>{this.props.hex}</small></h3>
-      </div>
-    )
-  }
-});
+var rgbToHex = require('./Functions/RGBToHex');
+var ColorItem = require('./ColorItem');
+
 var Colors = React.createClass({
   getInitialState: function() {
     return {
@@ -36,8 +16,7 @@ var Colors = React.createClass({
     var div = document.createElement('div');
     div.style.backgroundColor = colorName;
     document.body.appendChild(div);
-    var splitRgb = div.style.backgroundColor.split(',');
-    var convertToHex = rgbToHex(returnNum(splitRgb[0]), returnNum(splitRgb[1]), returnNum(splitRgb[2]));
+    var convertToHex = rgbToHex(div.style.backgroundColor);
     this.setState({
       defaultBackgroundColor: div.style.backgroundColor,
       colorName: colorName,
