@@ -33,7 +33,7 @@ gulp.task('htmlMinify', function() {
   .pipe(gulp.dest('./build'))
 });
 gulp.task('watch', function() {
-  gulp.watch('./src/js/**/*.js', ['watch-js']);
+  gulp.watch('./src/**/*', ['watch-js']);
 });
 
 gulp.task('default', ['watch', 'browser-sync']);

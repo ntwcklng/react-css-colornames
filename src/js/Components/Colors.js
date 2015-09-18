@@ -1,5 +1,7 @@
 var React = require('react');
 var Data = require('./Data');
+var rgbToHex = require('./RGBToHex');
+var returnNum = require('./ReturnNum');
 var ColorItem = React.createClass({
   colorItemClick: function() {
     this.props.colorItemClickHandle(this.props.colorname, this.props.textColor);
@@ -8,10 +10,11 @@ var ColorItem = React.createClass({
     var getColorName = this.props.colorname;
     var styles = {
       backgroundColor: getColorName,
-      padding: '10px',
+      padding: '20px 5px',
       color: this.props.textColor,
-      margin: '10px',
-      textAlign: 'center'
+      margin: '5px',
+      textAlign: 'center',
+      cursor: 'pointer'
     };
     return (
       <div onClick={this.colorItemClick} style={styles} className='colorItem'>
@@ -23,19 +26,23 @@ var ColorItem = React.createClass({
 var Colors = React.createClass({
   getInitialState: function() {
     return {
-      defaultBackgroundColor: '#fff',
+      defaultBackgroundColor: 'rgb(255, 255, 255)',
       colorName: 'White',
-      defaultTextColor: '#1b1b1b'
+      defaultTextColor: '#1b1b1b',
+      hex: '#ffffff'
     }
   },
   showHexColor: function(colorName, textColor) {
     var div = document.createElement('div');
     div.style.backgroundColor = colorName;
     document.body.appendChild(div);
+    var splitRgb = div.style.backgroundColor.split(',');
+    var convertToHex = rgbToHex(returnNum(splitRgb[0]), returnNum(splitRgb[1]), returnNum(splitRgb[2]));
     this.setState({
       defaultBackgroundColor: div.style.backgroundColor,
       colorName: colorName,
-      defaultTextColor: textColor
+      defaultTextColor: textColor,
+      hex: convertToHex
     });
   },
   render: function() {
@@ -52,19 +59,12 @@ var Colors = React.createClass({
     });
     var styles = {
       backgroundColor: this.state.defaultBackgroundColor,
-      position: 'fixed',
       color: this.state.defaultTextColor,
-      top: 0,
-      left: 0,
-      width: '100vw',
-      height: '70px',
-      lineHeight: '70px',
-      textAlign: 'center',
-      zIndex: 9999
+      margin: '0'
     };
     return (
       <div className="container">
-        <div style={styles}>{this.state.defaultBackgroundColor} - {this.state.colorName}</div>
+        <h2 className='headerColor' style={styles}>{this.state.hex} - {this.state.defaultBackgroundColor} - {this.state.colorName}</h2>
         {renderColors}
       </div>
     )

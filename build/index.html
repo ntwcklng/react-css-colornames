@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge, chrome=1"><title>CSS Colornames with ReactJS</title><link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" type="text/css"><!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> --><style>body {
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge, chrome=1"><title>CSS Colornames with ReactJS</title><link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" type="text/css"><!-- <link rel="stylesheet" href="css/main.css"> --><!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"> --><style>body {
       font-family: 'Varela Round', sans-serif;
     }
       ul {
@@ -9,17 +9,36 @@
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
-        width: 90%;
+        width: 95%;
         margin: 0 auto;
-        padding-top: 100px;
+        padding-top: 150px;
         -webkit-flex-wrap: wrap;
             -ms-flex-wrap: wrap;
                 flex-wrap: wrap;
       }
       .container .colorItem {
         -webkit-box-flex: 1;
-        -webkit-flex: 1 25%;
-            -ms-flex: 1 25%;
-                flex: 1 25%;
-        margin: 20px;
+        -webkit-flex: 1 24%;
+            -ms-flex: 1 24%;
+                flex: 1 24%;
+        margin: 10px;
+      }
+      .headerColor {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        z-index: 9999;
+        box-shadow: 0px 2px 1px rgba(0,0,0,.2);
+      }
+      @media (max-width: 750px) {
+        .container .colorItem {
+          -webkit-box-flex: 1;
+        -webkit-flex: 1 100%;
+            -ms-flex: 1 100%;
+                flex: 1 100%;
+        }
       }</style></head><body><h5>Loading application...</h5><script src="js/app.js"></script></body></html>
