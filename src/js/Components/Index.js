@@ -1,11 +1,11 @@
 var React = require('react');
-var Options = require('./Options');
+var Colors = require('./Colors');
 
 var Index = React.createClass({
   render: function () {
     return (
-      <div className="container">
-        <Options title="Options Title" />
+      <div>
+        <Colors title="Options Title" />
       </div>
     );
   }

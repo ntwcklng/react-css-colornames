@@ -1,7 +1,3 @@
-var Data = [
-  {name: 'Data 1', num: 100},
-  {name: 'Data 2', num: 200},
-  {name: 'Data 3', num: 300}
-];
+var CSS_COLOR_NAMES = ["AliceBlue","AntiqueWhite","Aquamarine","Azure","Beige","Bisque","BlanchedAlmond","BlueViolet","Brown","BurlyWood","CadetBlue","Chartreuse","Chocolate","Coral","CornflowerBlue","Cornsilk","Crimson","Cyan",{name: 'DarkBlue', textColor: 'white'},"DarkCyan","DarkGoldenRod","DarkGray","DarkGrey","DarkGreen","DarkKhaki","DarkMagenta","DarkOliveGreen","Darkorange","DarkOrchid","DarkRed","DarkSalmon","DarkSeaGreen","DarkSlateBlue",{name: 'DarkSlateGray', textColor: 'white'},"DarkTurquoise","DarkViolet","DeepPink","DeepSkyBlue","DimGray","DimGrey","DodgerBlue","FireBrick","FloralWhite","ForestGreen","Gainsboro","GhostWhite","Gold","GoldenRod","GreenYellow","HoneyDew","HotPink","IndianRed",{name: 'Indigo', textColor: 'white'},"Ivory","Khaki","Lavender","LavenderBlush","LawnGreen","LemonChiffon","LightBlue","LightCoral","LightCyan","LightGoldenRodYellow","LightGray","LightGrey","LightGreen","LightPink","LightSalmon","LightSeaGreen","LightSkyBlue","LightSlateGray","LightSlateGrey","LightSteelBlue","LightYellow","LimeGreen","Linen","Magenta","MediumAquaMarine","MediumBlue","MediumOrchid","MediumPurple","MediumSeaGreen","MediumSlateBlue","MediumSpringGreen","MediumTurquoise","MediumVioletRed",{name: 'MidnightBlue', textColor: 'white'},"MintCream","MistyRose","Moccasin","NavajoWhite","OldLace","OliveDrab","Orange","OrangeRed","Orchid","PaleGoldenRod","PaleGreen","PaleTurquoise","PaleVioletRed","PapayaWhip","PeachPuff","Peru","Pink","Plum","PowderBlue","Purple","Red","RosyBrown","RoyalBlue","SaddleBrown","Salmon","SandyBrown","SeaGreen","SeaShell","Sienna","SkyBlue","SlateBlue","SlateGray","SlateGrey","Snow","SpringGreen","SteelBlue","Tan","Thistle","Tomato","Turquoise","Violet","Wheat","WhiteSmoke","YellowGreen"];
 
-module.exports = Data;
+module.exports = CSS_COLOR_NAMES;
