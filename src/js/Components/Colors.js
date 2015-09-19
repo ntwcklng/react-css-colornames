@@ -1,50 +1,63 @@
 var React = require('react');
-var Data = require('./Data');
+var ReactAddons = require('react/addons')
+var ColorList = require('./ColorList');
 var rgbToHex = require('./Functions/RGBToHex');
 var ColorItem = require('./ColorItem');
+var Filter = require('./Filter');
+var ReactCSSTransitionGroup = ReactAddons.addons.CSSTransitionGroup;
 
 var Colors = React.createClass({
   getInitialState: function() {
     return {
-      defaultBackgroundColor: 'rgb(255, 255, 255)',
+      backgroundColor: 'rgb(255, 255, 255)',
       colorName: 'White',
-      defaultTextColor: '#1b1b1b',
-      hex: '#ffffff'
+      headerTextColor: '#1b1b1b',
+      hex: '#ffffff',
+      filter: 'INIT'
     }
   },
-  showHexColor: function(colorName, textColor) {
-    var div = document.createElement('div');
-    div.style.backgroundColor = colorName;
-    document.body.appendChild(div);
-    var convertToHex = rgbToHex(div.style.backgroundColor);
+  showHexColor: function(colorName, textColor, hex) {
     this.setState({
-      defaultBackgroundColor: div.style.backgroundColor,
+      backgroundColor: hex,
       colorName: colorName,
-      defaultTextColor: textColor,
-      hex: convertToHex
+      headerTextColor: textColor,
+      hex: hex
+    });
+  },
+  updateFilter: function(filter) {
+    var setFilter = filter;
+    if(filter === 'Remove Filter') {
+      setFilter = 'INIT'
+    }
+    this.setState({
+      filter: setFilter
     });
   },
   render: function() {
     var self = this;
     var colorItemStyle;
-    var renderColors = Data.map(function(color) {
-      if(color.name) {
-        colorItemStyle = color.textColor;
-        color = color.name;
-      } else {
-        colorItemStyle = '#1b1b1b';
+    var activeFilter = this.state.filter;
+    var renderColorsV2 = ColorList.map(function(color) {
+      var textColor = color.textColor || "#1b1b1b";
+      if(activeFilter || activeFilter === "INIT") {
+        if((color.groups.indexOf(activeFilter.toLowerCase()) !== -1) || activeFilter === 'INIT') {
+          return <ColorItem textColor={textColor} colorItemClickHandle={self.showHexColor} key={color.hex + color.name} colorname={color.name} hex={color.hex} groups={color.groups} filter={activeFilter} />
+        } else {
+          console.log("j");
+        }
       }
-      return <ColorItem textColor={colorItemStyle} colorItemClickHandle={self.showHexColor} ref={color} key={color} colorname={color} />
     });
     var styles = {
-      backgroundColor: this.state.defaultBackgroundColor,
-      color: this.state.defaultTextColor,
-      margin: '0'
+      backgroundColor: this.state.backgroundColor,
+      color: this.state.headerTextColor
     };
     return (
       <div className="container">
-        <h2 className='headerColor' style={styles}>{this.state.hex} - {this.state.defaultBackgroundColor} - {this.state.colorName}</h2>
-        {renderColors}
+        <h2 className='headerColor' style={styles}>{this.state.hex} - {this.state.colorName}</h2>
+        <Filter setFilter={this.updateFilter} />
+        <ReactCSSTransitionGroup transitionName='colorItem'>
+          {renderColorsV2}
+        </ReactCSSTransitionGroup>
       </div>
     )
   }
