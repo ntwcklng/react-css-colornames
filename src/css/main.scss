@@ -15,17 +15,15 @@ ul {
 }
 .colorItem {
   @media (max-width: 750px) {
-    width: 100%;
+    flex: 1 100%;
     padding: 20px 0;
     margin: 5px auto;
   }
-  width: 27.8%;
+  flex: 1 25%;
   margin: 10px;
   padding: 20px 25px;
-  margin: 5px;
   text-align: center;
   cursor: pointer;
-  display: inline-block;
 }
 .colorItem-enter {
   opacity: 0.01;
