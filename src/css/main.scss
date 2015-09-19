@@ -25,33 +25,8 @@ ul {
   text-align: center;
   cursor: pointer;
 }
-.colorItem-enter {
-  opacity: 0.01;
-}
-.colorItem-enter.colorItem-enter-active {
-  opacity: 1;
-  transition: 100ms ease-in-out;
-}
-.colorItem-leave {
-  opacity: 1;
-}
-.colorItem-leave.colorItem-leave-active {
-  opacity: 0.01;
-  transition: opacity 100ms ease-in-out;
-}
-.hideColor {
-  display: none;
-}
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  99% {
-    opacity: 0;
-  }
-  100% {
-    display: none;
-  }
+.textCapitalize {
+  text-transform: capitalize;
 }
 .filterList {
   flex: 1 100%;

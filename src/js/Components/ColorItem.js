@@ -21,7 +21,7 @@ var ColorItem = React.createClass({
     };
     return (
         <div onClick={this.colorItemClick} style={styles} className={showColor ? 'colorItem ' : 'hideColor'}>
-          <h3>{this.props.colorname} <small>({this.props.hex})</small></h3>
+          <h3><span className='textCapitalize'>{this.props.colorname}</span> <small>({this.props.hex})</small></h3>
         </div>
     )
   }

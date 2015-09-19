@@ -9,10 +9,10 @@ var ReactCSSTransitionGroup = ReactAddons.addons.CSSTransitionGroup;
 var Colors = React.createClass({
   getInitialState: function() {
     return {
-      backgroundColor: 'rgb(255, 255, 255)',
-      colorName: 'White',
+      backgroundColor: '#ff6347',
+      colorName: 'Tomato',
       headerTextColor: '#1b1b1b',
-      hex: '#ffffff',
+      hex: '#ff6347',
       filter: false
     }
   },
@@ -47,7 +47,7 @@ var Colors = React.createClass({
     };
     return (
       <div className="container">
-        <h2 className='headerColor' style={styles}>{this.state.hex} - {this.state.colorName}</h2>
+        <h2 className='headerColor' style={styles}>{this.state.hex} - <span className='textCapitalize'>{this.state.colorName}</span></h2>
         <Filter setFilter={this.updateFilter} />
           {renderColors}
       </div>
