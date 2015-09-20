@@ -1,7 +1,10 @@
 var React = require('react');
+var returnTextColor = require('./Functions/ReturnTextColor');
+
 var ColorItem = React.createClass({
   colorItemClick: function() {
-    this.props.colorItemClickHandle(this.props.colorname, this.props.textColor, this.props.hex);
+    var textColor = returnTextColor(this.props.groups);
+    this.props.colorItemClickHandle(this.props.colorname, textColor, this.props.hex);
   },
   render: function() {
     var showColor = true;
@@ -15,9 +18,10 @@ var ColorItem = React.createClass({
         showColor = false;
       }
    }
+   var textColor = returnTextColor(this.props.groups);
     var styles = {
       backgroundColor: this.props.colorname,
-      color: this.props.textColor
+      color: textColor
     };
     return (
         <div onClick={this.colorItemClick} style={styles} className={showColor ? 'colorItem ' : 'hideColor'}>
