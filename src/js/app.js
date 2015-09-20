@@ -1,5 +1,6 @@
 var React = require('react');
 var ApplicationClass = require('./Components/Index');
-var ApplicationComponent = React.createFactory(ApplicationClass);
+//var ApplicationComponent = React.createFactory(ApplicationClass);
 
-React.render(ApplicationComponent(), document.querySelector('#root'));
+React.render(<ApplicationClass />, document.querySelector('#root'));
+//React.render(ApplicationComponent(), document.querySelector('#root'));

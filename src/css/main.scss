@@ -1,3 +1,4 @@
+$MEDIA_MAX_WIDTH: 750px;
 body {
   font-family: 'Varela Round', sans-serif;
   font-size: 16px;
@@ -12,12 +13,15 @@ ul {
   padding-top: 150px;
   flex-wrap: wrap;
   text-align: center;
+  @media (max-width: $MEDIA_MAX_WIDTH) {
+    padding-top: 70px;
+  }
 }
 .colorItem {
-  @media (max-width: 750px) {
+  @media (max-width: $MEDIA_MAX_WIDTH) {
     flex: 1 100%;
-    padding: 20px 0;
-    margin: 5px auto;
+    padding: 15px 0;
+    margin: 3px auto;
   }
   flex: 1 25%;
   margin: 10px;
@@ -32,6 +36,9 @@ ul {
   flex: 1 100%;
   width: 100%;
   list-style: none;
+  .active {
+    background-color: deepskyblue;
+  }
   li {
     text-align: center;
     display: inline-block;
@@ -39,6 +46,10 @@ ul {
     margin: 10px;
     background-color: darkgray;
     cursor: pointer;
+    @media (max-width: $MEDIA_MAX_WIDTH) {
+      padding: 10px 20px;
+      font-size: 12px;
+    }
   }
 }
 .hideColor {
@@ -55,7 +66,7 @@ ul {
   z-index: 9999;
   box-shadow: 0px 2px 1px rgba(0,0,0,.2);
   transition: 100ms ease-in-out;
-  @media (max-width: 750px) {
+  @media (max-width: $MEDIA_MAX_WIDTH) {
     font-size: 14px;
   }
 }

@@ -48,7 +48,7 @@ var Colors = React.createClass({
     return (
       <div className="container">
         <h2 className='headerColor' style={styles}>{this.state.hex} - <span className='textCapitalize'>{this.state.colorName}</span></h2>
-        <Filter setFilter={this.updateFilter} />
+        <Filter activeFilter={activeFilter} setFilter={this.updateFilter} />
           {renderColors}
       </div>
     )
