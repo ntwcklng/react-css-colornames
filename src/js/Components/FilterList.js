@@ -5,6 +5,7 @@ var FilterList = [
   'Green',
   'Dark',
   'Light',
+  'Flat',
   'Remove Filter'
 ];
 

@@ -1,23 +1,6 @@
 var React = require('react');
 var FilterList = require('./FilterList');
-var FilterItem = React.createClass({
-  getInitialState: function() {
-    return {
-      activeFilter: ''
-    } 
-  },
-  clickHandle: function() {
-    this.props.updateFilter(this.props.filterName);
-    this.setState({
-      activeFilter: this.props.filterName
-    });
-  },
-  render: function() {
-    return (
-      <li onClick={this.clickHandle} className={this.props.markActive && 'active'}>{this.props.filterName}</li>
-    )
-  }
-});
+var FilterItem = require('./FilterItem');
 
 var Filter = React.createClass({
   getInitialState: function() {
@@ -36,6 +19,7 @@ var Filter = React.createClass({
     var renderFilters = FilterList.map(function(filter) {
       var markAsActive = false;
       if(self.state.activeFilter === filter && filter !== 'Remove Filter') markAsActive = true;
+
       return <FilterItem markActive={markAsActive} updateFilter={self.updateFilter} key={filter} filterName={filter} />
     });
     return(
