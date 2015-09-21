@@ -55,7 +55,6 @@ var Colors = React.createClass({
       color: this.state.headerTextColor
     };
     var stateSelection = this.state.selection;
-    console.log(stateSelection);
     var renderSelection = stateSelection.join(', ');
     return (
       <div className="container">
