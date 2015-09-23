@@ -1,4 +1,4 @@
-var React = require('react');
+var React            = require('react');
 var ApplicationClass = require('./Components/Index');
 //var ApplicationComponent = React.createFactory(ApplicationClass);
 

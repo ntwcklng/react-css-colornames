@@ -1,4 +1,4 @@
-var React = require('react');
+var React      = require('react');
 var FilterList = require('./FilterList');
 var FilterItem = require('./FilterItem');
 

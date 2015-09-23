@@ -1,4 +1,4 @@
-var React = require('react');
+var React  = require('react');
 var Colors = require('./Colors');
 
 var Index = React.createClass({

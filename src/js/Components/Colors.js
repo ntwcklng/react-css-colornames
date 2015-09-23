@@ -1,8 +1,8 @@
-var React = require('react');
+var React     = require('react');
 var ColorList = require('./ColorList');
-var rgbToHex = require('./Functions/RGBToHex');
+var rgbToHex  = require('./Functions/RGBToHex');
 var ColorItem = require('./ColorItem');
-var Filter = require('./Filter');
+var Filter    = require('./Filter');
 
 var Colors = React.createClass({
   getInitialState: function() {

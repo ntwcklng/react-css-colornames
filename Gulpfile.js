@@ -1,13 +1,13 @@
-var gulp = require('gulp'),
-    browserify = require('browserify'),
-    source = require('vinyl-source-stream'),
-    buffer = require('vinyl-buffer'),
-    reactify = require('reactify'),
-    htmlmin = require('gulp-html-minifier'),
-    uglify = require('gulp-uglify'),
-    browserSync = require('browser-sync'),
-    sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer');
+var gulp     = require('gulp'),
+browserify   = require('browserify'),
+source       = require('vinyl-source-stream'),
+buffer       = require('vinyl-buffer'),
+reactify     = require('reactify'),
+htmlmin      = require('gulp-html-minifier'),
+uglify       = require('gulp-uglify'),
+browserSync  = require('browser-sync'),
+sass         = require('gulp-sass'),
+autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('sass', function() {
   return gulp.src('./src/css/*.scss')
